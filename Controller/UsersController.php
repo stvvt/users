@@ -29,7 +29,7 @@ class UsersController extends UsersAppController {
  *
  * @var array
  */
-	public $helpers = array('Html', 'Form', 'Session', 'Time', 'Text', 'Utils.Gravatar');
+	public $helpers = array('Text', 'Utils.Gravatar');
 
 /**
  * Components
@@ -47,7 +47,8 @@ class UsersController extends UsersAppController {
 		array('field' => 'search', 'type' => 'value'),
 		array('field' => 'username', 'type' => 'value'),
 		array('field' => 'email', 'type' => 'value'));
-
+		
+		
 /**
  * beforeFilter callback
  *
@@ -90,7 +91,7 @@ class UsersController extends UsersAppController {
 		}
 
 		$this->paginate[$this->modelClass] = array(
-			'search',
+//			'search',
 			'limit' => 12,
 			'order' => $this->modelClass . '.username ASC',
 			'by' => $searchTerm,
@@ -99,8 +100,7 @@ class UsersController extends UsersAppController {
 					'AND' => array(
 							$this->{$this->modelClass}->alias . '.active' => 1, 
 							$this->{$this->modelClass}->alias . '.email_authenticated' => 1))));
-
-
+							
 		$this->set('users', $this->paginate($this->modelClass));
 		$this->set('searchTerm', $searchTerm);
 
