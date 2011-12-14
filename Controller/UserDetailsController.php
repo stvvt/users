@@ -31,7 +31,7 @@ class UserDetailsController extends UsersAppController {
  *
  * @var array
  */
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html');
 
 /**
  * Index

@@ -9,27 +9,29 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="users view">
+<article>
 <h2><?php echo __d('users', 'User'); ?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-			<?php echo $user[$model]['username']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
-			<?php echo $user[$model]['created']; ?>
-			&nbsp;
-		</dd>
-		<?php
-		if (!empty($user['UserDetail'])) {
-			foreach ($user['UserDetail'] as $detail) {
-				echo '<dt>' . $detail['field'] . '</dt>';
-				echo '<dd>' . $detail['value'] . '</dd>';
-			}
+
+<dl><?php $i = 0; $class = ' class="altrow"';?>
+	<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
+	<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+		<?php echo $user[$model]['username']; ?>
+		&nbsp;
+	</dd>
+	<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Created'); ?></dt>
+	<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+		<?php echo $user[$model]['created']; ?>
+		&nbsp;
+	</dd>
+	<?php
+	if (!empty($user['UserDetail']['User'])) {
+		foreach ($user['UserDetail']['User'] as $field => $value) {
+			echo '<dt>' . $field . '</dt>';
+			echo '<dd>' . $value . '</dd>';
 		}
-		?>
-	</dl>
-</div>
+	}
+	?>
+</dl>
+</article>
+
 <?php echo $this->element('Users/sidebar'); ?>
