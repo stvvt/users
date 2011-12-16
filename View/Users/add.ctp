@@ -9,9 +9,14 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="users form">
-	<h2><?php echo __d('users', 'Add User'); ?></h2>
+<section class="page-header">
+	<h1><?php echo __d('users', 'Users'); ?></h1>
+</section>
+<article>
 	<fieldset>
+		<legend>
+			<?php echo __d('users', 'Add User'); ?>
+		</legend>
 		<?php
 			echo $this->Form->create($model);
 			echo $this->Form->input('username', array(
@@ -32,5 +37,6 @@
 			echo $this->Form->end(__d('users', 'Submit'));
 		?>
 	</fieldset>
-</div>
+</article>
+
 <?php echo $this->element('Users/sidebar'); ?>

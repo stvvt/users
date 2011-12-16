@@ -143,9 +143,9 @@ class UsersController extends UsersAppController {
 				'scope' => array(
 					'User.active' => 1)));
 
-		$this->Auth->loginRedirect = '/';
-		$this->Auth->logoutRedirect = '/';
-		$this->Auth->loginAction = array('admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
+//		$this->Auth->loginRedirect = '/';
+//		$this->Auth->logoutRedirect = '/';
+//		$this->Auth->loginAction = array('admin' => false, 'plugin' => 'users', 'controller' => 'users', 'action' => 'login');
 	}
 
 /**

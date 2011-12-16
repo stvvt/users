@@ -9,9 +9,12 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="users index">
-	<h2><?php echo __d('users', 'Login'); ?></h2>
+<header class="page-header">
+	<h1><?php echo __d('users', 'Login'); ?></h1>
+</header>
+<article>
 	<fieldset>
+		<legend><?php echo __d('users', 'Login'); ?></legend>
 		<?php
 			echo $this->Form->create($model, array(
 				'action' => 'login',
@@ -29,8 +32,9 @@
 
 			echo $this->Form->hidden('User.return_to', array(
 				'value' => $return_to));
-			echo $this->Form->end(__d('users', 'Submit'));
+			echo $this->Form->end(__d('users', 'Login'));
 		?>
 	</fieldset>
-</div>
+</article>
+
 <?php echo $this->element('Users/sidebar'); ?>
