@@ -351,8 +351,10 @@ class UsersController extends UsersAppController {
 			}
 
 			return $this->redirect($this->Auth->redirect($data['return_to']));
-		} else {
+		} elseif ($this->request->is('post')) {
 			$this->Auth->flash(__d('users', 'Invalid e-mail / password combination.  Please try again'));
+		} else {
+			$this->Auth->flash(__d('users', 'You need to log-in in order to continue'));
 		}
 
 		if (isset($this->request->params['named']['return_to'])) {

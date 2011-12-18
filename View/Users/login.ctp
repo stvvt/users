@@ -13,6 +13,7 @@
 	<h1><?php echo __d('users', 'Login'); ?></h1>
 </header>
 <article>
+	<?php echo $this->Session->flash('auth'); ?>
 	<fieldset>
 		<legend><?php echo __d('users', 'Login'); ?></legend>
 		<?php
