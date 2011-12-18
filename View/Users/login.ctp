@@ -12,7 +12,7 @@
 <header class="page-header">
 	<h1><?php echo __d('users', 'Login'); ?></h1>
 </header>
-<article>
+<article class="main">
 	<?php echo $this->Session->flash('auth'); ?>
 	<fieldset>
 		<legend><?php echo __d('users', 'Login'); ?></legend>
@@ -38,4 +38,6 @@
 	</fieldset>
 </article>
 
+<aside>
 <?php echo $this->element('Users/sidebar'); ?>
+</aside>
