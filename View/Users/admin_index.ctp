@@ -9,9 +9,15 @@
  * @license MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<div class="users index">
-	<h2><?php echo __d('users', 'Users'); ?></h2>
+<header class="page-header">
+	<h1>
+		<?php echo __d('users', 'Users'); ?>
+		<small><?php echo $this->element('paging'); ?></small>
+	</h1>
+	<?php echo $this->element('Users/admin_sidebar'); ?>
+</header>
 
+<article class="main">
 	<?php echo $this->Form->create($model, array('action' => 'index')); ?>
 	<fieldset>
 	<legend><?php echo __d('users', 'Filter'); ?></legend>
@@ -22,7 +28,6 @@
 	</fieldset>
 	<?php echo $this->Form->end(__d('users', 'Search')); ?>
 
-	<?php echo $this->element('paging'); ?>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
 			<th><?php echo $this->Paginator->sort('username'); ?></th>
@@ -64,5 +69,7 @@
 			</tr>
 		<?php endforeach; ?>
 	</table>
-</div>
-<?php echo $this->element('Users/admin_sidebar'); ?>
+	
+	<?php echo $this->element('Pages')?>
+	
+</article>
