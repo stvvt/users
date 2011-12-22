@@ -12,7 +12,7 @@
 <section class="page-header">
 	<h1><?php echo __d('users', 'Users'); ?></h1>
 </section>
-<article>
+<article class="main">
 	<fieldset>
 		<legend>
 			<?php echo __d('users', 'Add User'); ?>
@@ -39,4 +39,6 @@
 	</fieldset>
 </article>
 
+<aside>
 <?php echo $this->element('Users/sidebar'); ?>
+</aside>

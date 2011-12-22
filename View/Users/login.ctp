@@ -12,7 +12,7 @@
 <header class="page-header">
 	<h1><?php echo __d('users', 'Login'); ?></h1>
 </header>
-<article>
+<article class="main">
 	<fieldset>
 		<legend><?php echo __d('users', 'Login'); ?></legend>
 		<?php
@@ -28,7 +28,7 @@
 				'type'  => 'checkbox',
 				'label' => __d('users', 'Remember Me')));
 			
-			echo '<p>' . $this->Html->link(__d('users', 'I forgot my password'), array('action' => 'reset_password')) . '</p>';
+			echo '<p class="input">' . $this->Html->link(__d('users', 'I forgot my password'), array('action' => 'reset_password')) . '</p>';
 
 			echo $this->Form->hidden('User.return_to', array(
 				'value' => $return_to));
@@ -37,4 +37,6 @@
 	</fieldset>
 </article>
 
+<aside>
 <?php echo $this->element('Users/sidebar'); ?>
+</aside>
